@@ -1,0 +1,23 @@
+- kind: abswift.callbacks.EvaluationMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: chunked_neutral_test_subset
+  name: EvaluationMetricsCallback
+  data_specs: ${data_specs}
+  metrics_per_area: true
+
+- kind: abswift.callbacks.EvaluationMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: chunked_large_scale_test
+  name: EvaluationMetricsCallback
+  data_specs: ${data_specs}
+  metrics_per_area: true
+
+- kind: abswift.callbacks.EvaluationMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: chunked_very_large_scale_test
+  name: EvaluationMetricsCallback
+  data_specs: ${data_specs}
+  metrics_per_area: true

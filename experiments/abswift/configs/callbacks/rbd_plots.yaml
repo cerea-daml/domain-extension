@@ -1,0 +1,29 @@
+- kind: abswift.callbacks.PlotCasesCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: neutral_test_subset
+  name: PlotCallback
+  data_specs: ${data_specs}
+  save_folder: figures
+  plot_height: 2
+  save_res_array: true
+
+- kind: abswift.callbacks.PlotCasesCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: large_scale_test
+  name: PlotCallback
+  data_specs: ${data_specs}
+  save_folder: figures
+  plot_height: 2
+  save_res_array: true
+
+- kind: abswift.callbacks.PlotCasesCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: very_large_scale_test
+  name: PlotCallback
+  data_specs: ${data_specs}
+  save_folder: figures
+  plot_height: 2
+  save_res_array: true

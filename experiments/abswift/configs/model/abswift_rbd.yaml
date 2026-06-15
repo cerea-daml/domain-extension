@@ -1,0 +1,53 @@
+kind: abswift.models.ABSWIFT
+
+name: abswift
+
+hidden_dim: 192
+
+terrain_supernode_radius: 5
+obstacles_supernode_radius: 1
+
+transformer_block_config:
+  num_heads: 3
+  mlp_expansion_factor: 4
+  use_rope: true
+  hidden_dim: ${model.hidden_dim}
+
+geometry_preprocessor_blocks:
+  - shared
+  - cross
+
+physics_blocks:
+  - shared
+  - cross
+  - shared
+  - cross
+  - shared
+  - cross
+  
+num_volume_blocks: 4
+
+optimizer_config: ${optimizer}
+
+forward_properties:
+  - obstacles_position
+  - obstacles_supernode_idx
+  - obstacles_batch_idx
+
+  - terrain_position
+  - terrain_supernode_idx
+  - terrain_batch_idx
+  - terrain_features
+
+  - anchor_volume_position
+  - query_volume_position
+
+  - meteorological_profile
+
+data_specs: ${data_specs}
+
+#bias has to be specified per experiment
+bias_type: ???
+geometry_lbda: ???
+processor_lbda: ???
+decoder_lbda: ???

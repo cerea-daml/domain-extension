@@ -1,0 +1,47 @@
+positions:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: position
+  stat_keys:
+    min: raw_pos_min
+    max: raw_pos_max
+  scale: 1000
+
+meteorological_profile:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: mean_std
+
+terrain_rugosity:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: mean_std
+
+terrain_invlmo:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: mean_std
+
+volume_velocity:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: mean_std
+
+volume_pressure:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: mean_std
+
+volume_pottemp:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: mean_std
+
+volume_tke:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: mean_std
+  stat_keys:
+    mean: volume_tke_logscale_mean
+    std: volume_tke_logscale_std
+  logscale: true
+
+volume_epsilon:
+  kind: abswift.normalizers.FieldNormalizer2
+  strategy: mean_std
+  stat_keys:
+    mean: volume_epsilon_logscale_mean
+    std: volume_epsilon_logscale_std
+  logscale: true

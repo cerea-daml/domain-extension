@@ -1,0 +1,12 @@
+train:
+  root: ${dataset_root}
+  kind: ${dataset_kind}
+  split: train
+  dataset_normalizers: ${dataset_normalizers}
+  pipeline: ${pipeline}
+val:
+  root: ${dataset_root}
+  kind: ${dataset_kind}
+  split: val
+  dataset_normalizers: ${dataset_normalizers}
+  pipeline: ${pipeline}

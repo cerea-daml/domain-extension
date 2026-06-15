@@ -1,0 +1,21 @@
+kind: academic_cases.models.TransformerModel
+name: transformer
+
+data_specs: ${data_specs}
+
+hidden_dim: 192
+
+depth: 6
+
+transformer_config:
+  num_heads: 3
+  mlp_expansion_factor: 4
+  use_rope: true
+  hidden_dim: ${model.hidden_dim}
+  attention_arguments: ??? #must be specified per-experiment
+
+forward_properties:
+  - input_feature
+  - position
+
+optimizer_config: ${optimizer}

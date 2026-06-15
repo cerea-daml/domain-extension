@@ -1,0 +1,25 @@
+position:
+  kind: academic_cases.datasets.normalizers.PositionNormalizer
+  raw_pos_min: [0.0]
+  raw_pos_max: [100.0]
+  scale: 1000
+
+u:
+  kind: noether.data.preprocessors.normalizers.MeanStdNormalization
+  mean: [7.55546e-04]
+  std: [4.55936e-02]
+
+h:
+  kind: noether.data.preprocessors.normalizers.MeanStdNormalization
+  mean: [1.01399e+00]
+  std: [1.50746e-02]
+
+du:
+  kind: noether.data.preprocessors.normalizers.MeanStdNormalization
+  mean: [6.17570e-05]
+  std: [6.49158e-03]
+
+dh:
+  kind: noether.data.preprocessors.normalizers.MeanStdNormalization
+  mean: [-3.09070e-05]
+  std: [2.22406e-03]

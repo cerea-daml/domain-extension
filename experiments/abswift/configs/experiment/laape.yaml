@@ -1,0 +1,10 @@
+# @package _global_
+
+# We implement locality using hyperbolic bias for asymetry in the decoder
+# Furthermore, values below are in units of normalised coordinates
+
+model:
+  bias_type: hyperbolic
+  geometry_lbda: [111, 250, 500]
+  processor_lbda: [111, 250, 500]
+  decoder_lbda: [[111, 250, 500], [225, 250, 500]] # (lbda+, lbda-) with each lbda being anysotropic

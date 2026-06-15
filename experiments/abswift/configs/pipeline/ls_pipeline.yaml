@@ -1,0 +1,15 @@
+# pipeline for Random Building Dataset in scaling 2 and AB-SWIFT
+# configuration matching the abswift paper
+
+kind: abswift.pipelines.atmo_pipeline.AtmoPipeline
+
+num_terrain_points: 16384 
+num_obstacles_points: 16384
+
+num_terrain_supernodes: 4096
+num_obstacles_supernodes: 4096
+num_volume_anchor_points: 32768
+
+use_query_positions: true
+
+data_specs: ${data_specs}

@@ -1,0 +1,74 @@
+- kind: academic_cases.callbacks.EvaluationMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+
+- kind: academic_cases.callbacks.EvaluationMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test_s2
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+
+- kind: academic_cases.callbacks.EvaluationMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test_s3
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+
+- kind: academic_cases.callbacks.EvaluationMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test_s7
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+
+- kind: academic_cases.callbacks.EvaluationMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test_s10
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+
+- kind: academic_cases.callbacks.RolloutMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+  times: ${eval_times}
+
+- kind: academic_cases.callbacks.RolloutMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test_s2
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+  times: ${eval_times}
+
+- kind: academic_cases.callbacks.RolloutMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test_s3
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+  times: ${eval_times}
+
+- kind: academic_cases.callbacks.RolloutMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test_s7
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+  times: ${eval_times}
+
+- kind: academic_cases.callbacks.RolloutMetricsCallback
+  batch_size: 1
+  every_n_epochs: 1
+  dataset_key: test_s10
+  forward_properties: ${model.forward_properties}
+  data_specs: ${data_specs}
+  times: ${eval_times}

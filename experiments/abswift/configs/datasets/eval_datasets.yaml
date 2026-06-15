@@ -1,0 +1,29 @@
+chunked_neutral_test_subset:
+  root:  ${dataset_root}
+  kind: ${dataset_kind}
+  split: neutral_test_subset
+  pipeline: ${pipeline}
+  dataset_normalizers: ${dataset_normalizers}
+  dataset_wrappers:
+    - kind: noether.data.base.wrappers.RepeatWrapper
+      repetitions: 10
+
+chunked_large_scale_test:
+  root:  ${dataset_root}
+  kind: ${dataset_kind}
+  split: large_scale_test
+  pipeline: ${ls_pipeline}
+  dataset_normalizers: ${dataset_normalizers}
+  dataset_wrappers:
+    - kind: noether.data.base.wrappers.RepeatWrapper
+      repetitions: 10
+
+chunked_very_large_scale_test:
+  root:  ${dataset_root}
+  kind: ${dataset_kind}
+  split: very_large_scale_test
+  pipeline: ${vls_pipeline}
+  dataset_normalizers: ${dataset_normalizers}
+  dataset_wrappers:
+    - kind: noether.data.base.wrappers.RepeatWrapper
+      repetitions: 10

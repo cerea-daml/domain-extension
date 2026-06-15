@@ -1,0 +1,40 @@
+# @package _global_
+
+#seems we can't avoid respecifying all
+
+dataset_root: ../../data/random_buildings_dataset
+dataset_kind: abswift.datasets.RandomBuildingsDataset
+
+# can't parse  run_dir to get the correct stage same and run_id from hydra afaik
+# So let's requier run_id and fix the resume to train
+output_path: ./outputs
+run_id: ???
+resume_run_id: ${run_id}
+resume_stage_name: train
+stage_name: eval
+resume_checkpoint: latest
+
+target_properties: #requiered by trainer
+  - anchor_volume_velocity
+  - anchor_volume_pressure
+  - anchor_volume_pottemp
+  - anchor_volume_tke
+  - anchor_volume_epsilon
+
+defaults:
+  - data_specs: rbd_data_specs
+  - dataset_normalizers: rbd_normalizers
+  - pipeline: rbd_train
+  - pipeline@ls_pipeline: ls_pipeline
+  - pipeline@vls_pipeline: vls_pipeline
+  - datasets: eval_datasets
+  - callbacks: inference_callbacks
+  - model: abswift_rbd #requiered by general ConfigSchema, even if I would rather avoid it and rely just on checkpoint loading
+  - trainer: base_trainer #requiered by general ConfigSchema, 
+  - optimizer: lion #requiered by trainer
+  - _self_
+
+datasets:
+  chunked_neutral_test_subset:
+    pipeline:
+      use_query_positions: true

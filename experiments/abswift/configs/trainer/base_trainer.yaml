@@ -1,0 +1,11 @@
+
+kind: abswift.trainers.multi_losses_trainer.MultiLossTrainer
+precision: bfloat16
+max_epochs: 500
+effective_batch_size: 1
+log_every_n_epochs: 1
+callbacks: ${callbacks}
+
+forward_properties: ${model.forward_properties}
+
+target_properties: ${target_properties}

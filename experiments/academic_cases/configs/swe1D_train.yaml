@@ -1,0 +1,12 @@
+# @package _global_
+
+name: swe_1D_train
+
+dataset_kind: academic_cases.datasets.SWE1DDataset
+dataset_root: ../../data/academic_datasets/swe_1D
+
+defaults:
+  - dataset_normalizers: swe1D_normalizers
+  - data_specs: swe1D_specs
+  - base_train
+  - _self_

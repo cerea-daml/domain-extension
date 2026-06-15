@@ -1,0 +1,24 @@
+# @package _global_
+
+name: swe1D_eval
+
+dataset_kind: academic_cases.datasets.SWE1DDataset
+dataset_root: ../../data/academic_datasets/swe_1D
+
+#set the resume to train and the stage to eval
+output_path: ./outputs
+run_id: ???
+resume_run_id: ${run_id}
+resume_stage_name: train
+stage_name: eval
+resume_checkpoint: latest
+
+defaults:
+  - dataset_normalizers: swe1D_normalizers
+  - data_specs: swe1D_specs
+  - base_train
+  - override datasets: test_dataset
+  - override callbacks: inference_callback
+  - _self_
+
+eval_times: [10, 25, 49]

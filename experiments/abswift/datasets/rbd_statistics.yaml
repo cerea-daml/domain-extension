@@ -1,0 +1,227 @@
+# Computed on 09/03 with noether compute statistics utility
+#and then moved manually to this file
+# command: noether-dataset-stats --dataset_kind=abswift_project.datasets.RandomBuildingsDataset --root=/home/i00683/workspace/cases/random_mesh_database/random_mesh_statical/vtk_2 --split=train
+
+#logscale values are recomputed on 15/03, using --logscale arg off the computation tool
+#Also, a small hotfix modif of the noether package was done so that StandardDatasetConfig was used instead of DatasetBaseConfig
+
+
+#position statistics -> terrain values except in z max where volume value is taken
+# raw_pos_min: [-1.45000e+02, -1.10000e+02, 0.00000e+00]
+# raw_pos_max: [3.05000e+02, 1.10000e+02, 5.47149e+01]
+
+#position statistiques, with a margin
+raw_pos_min: [-150, -120, 0]
+raw_pos_max: [320, 120, 60]
+
+# terrain statistics
+terrain_rugosity_mean: [3.10780e-01]
+terrain_rugosity_std: [2.53132e-01]
+terrain_invlmo_mean: [1.86228e-03]
+terrain_invlmo_std: [9.65053e-02]
+
+# Volume fields
+#velocity and (relative) pressure
+volume_velocity_mean: [2.90460e+00, -8.32665e-04, 8.52419e-03]
+volume_velocity_std:  [1.72039e+00, 1.91881e-01, 1.25547e-01]
+volume_pressure_mean: [-9.07271e-01]
+volume_pressure_std:  [7.89962e+00]
+#potential temperature
+volume_pottemp_mean: [2.86129e+02]
+volume_pottemp_std:  [1.10330e+01]
+#turbulent kinetic enegy (regular + logscale)
+# volume_tke_mean: [2.53179e+00]
+# volume_tke_std:  [4.76604e+00]
+volume_tke_logscale_mean: [7.47357e-01]
+volume_tke_logscale_std:  [9.02999e-01]
+#turbulent kinetic energy dissipation rate (regular + logscale)
+# volume_epsilon_mean: [3.21985e-01]
+# volume_epsilon_std:  [9.48364e-01]
+volume_epsilon_logscale_mean: [1.84378e-01]
+volume_epsilon_logscale_std:  [3.57059e-01]
+
+# Profile statistics
+meteorological_profile_mean: [4.98938e+00, 2.84927e+02, 5.72164e+00, 9.39048e-02]
+meteorological_profile_std:  [1.37532e+00, 1.48211e+01, 1.07470e+01, 3.70524e-01]
+
+
+
+#### Raw output of the command, kept here in case there is a bug or error ####
+# Statistics for 'meteorological_profile':
+#   Mean: (4.98938e+00, 2.84927e+02, 5.72164e+00, 9.39048e-02)
+#   Std:  (1.37532e+00, 1.48211e+01, 1.07470e+01, 3.70524e-01)
+#   Var:  (1.89150e+00, 2.19664e+02, 1.15498e+02, 1.37288e-01)
+#   Min:  (0.00000e+00, 2.36682e+02, 0.00000e+00, -2.33964e-04)
+#   Max:  (6.76934e+00, 2.98377e+02, 7.19987e+01, 8.28832e+00)
+#   Count: 8832
+
+# Statistics for 'obstacles_position':
+#   Mean: (-3.88908e-01, -3.40119e-01, 3.12618e+00)
+#   Std:  (2.58467e+01, 2.59870e+01, 2.53519e+00)
+#   Var:  (6.68054e+02, 6.75326e+02, 6.42719e+00)
+#   Min:  (-4.99600e+01, -4.99900e+01, 0.00000e+00)
+#   Max:  (4.99700e+01, 4.99850e+01, 3.79000e+01)
+#   Count: 1111081
+
+# Statistics for 'terrain_invlmo':
+#   Mean: (1.86228e-03,)
+#   Std:  (9.65053e-02,)
+#   Var:  (9.31326e-03,)
+#   Min:  -1.96168e-01
+#   Max:  1.48363e-01
+#   Count: 660693
+
+# Statistics for 'terrain_position':
+#   Mean: (5.67189e+01, -2.23773e-01, 1.10983e+00)
+#   Std:  (1.10725e+02, 4.76450e+01, 2.69568e+00)
+#   Var:  (1.22600e+04, 2.27004e+03, 7.26671e+00)
+#   Min:  (-1.45000e+02, -1.10000e+02, 0.00000e+00)
+#   Max:  (3.05000e+02, 1.10000e+02, 3.79000e+01)
+#   Count: 660693
+
+# Statistics for 'terrain_rugosity':
+#   Mean: (3.10780e-01,)
+#   Std:  (2.53132e-01,)
+#   Var:  (6.40757e-02,)
+#   Min:  5.03507e-02
+#   Max:  9.70451e-01
+#   Count: 660693
+
+# Statistics for 'volume_epsilon':
+#   Mean: (3.21985e-01,)
+#   Std:  (9.48364e-01,)
+#   Var:  (8.99395e-01,)
+#   Min:  1.58083e-11
+#   Max:  6.94155e+01
+#   Count: 16644173
+
+# Statistics for 'volume_position':
+#   Mean: (6.52408e+01, -1.46744e-01, 1.14060e+01)
+#   Std:  (1.14734e+02, 4.94491e+01, 1.27425e+01)
+#   Var:  (1.31639e+04, 2.44522e+03, 1.62372e+02)
+#   Min:  (-1.40000e+02, -1.05000e+02, 8.50000e-02)
+#   Max:  (2.98199e+02, 1.05000e+02, 5.47149e+01)
+#   Count: 16644173
+
+# Statistics for 'volume_potential_temperature':
+#   Mean: (2.86129e+02,)
+#   Std:  (1.10330e+01,)
+#   Var:  (1.21727e+02,)
+#   Min:  2.38975e+02
+#   Max:  2.97127e+02
+#   Count: 16644173
+
+# Statistics for 'volume_pressure':
+#   Mean: (-9.07271e-01,)
+#   Std:  (7.89962e+00,)
+#   Var:  (6.24040e+01,)
+#   Min:  -7.97809e+01
+#   Max:  3.02921e+01
+#   Count: 16644173
+
+# Statistics for 'volume_tke':
+#   Mean: (2.53179e+00,)
+#   Std:  (4.76604e+00,)
+#   Var:  (2.27151e+01,)
+#   Min:  5.58005e-10
+#   Max:  4.21714e+01
+#   Count: 16644173
+
+# Statistics for 'volume_velocity':
+#   Mean: (2.90460e+00, -8.32665e-04, 8.52419e-03)
+#   Std:  (1.72039e+00, 1.91881e-01, 1.25547e-01)
+#   Var:  (2.95974e+00, 3.68184e-02, 1.57621e-02)
+#   Min:  (-2.39941e+00, -4.55251e+00, -3.40677e+00)
+#   Max:  (6.20937e+00, 4.88183e+00, 3.86020e+00)
+#   Count: 16644173
+
+
+######## raw stats print of new computation (15/03/2026), with logscale of tke and eps. other stats should be identical #######
+
+# Statistics for 'meteorological_profile':
+#   Mean: (4.98938e+00, 2.84927e+02, 5.72164e+00, 9.39048e-02)
+#   Std:  (1.37532e+00, 1.48211e+01, 1.07470e+01, 3.70524e-01)
+#   Var:  (1.89150e+00, 2.19664e+02, 1.15498e+02, 1.37288e-01)
+#   Min:  (0.00000e+00, 2.36682e+02, 0.00000e+00, -2.33964e-04)
+#   Max:  (6.76934e+00, 2.98377e+02, 7.19987e+01, 8.28832e+00)
+#   Count: 8832
+
+# Statistics for 'obstacles_position':
+#   Mean: (-3.88908e-01, -3.40119e-01, 3.12618e+00)
+#   Std:  (2.58467e+01, 2.59870e+01, 2.53519e+00)
+#   Var:  (6.68054e+02, 6.75326e+02, 6.42719e+00)
+#   Min:  (-4.99600e+01, -4.99900e+01, 0.00000e+00)
+#   Max:  (4.99700e+01, 4.99850e+01, 3.79000e+01)
+#   Count: 1111081
+
+# Statistics for 'terrain_invlmo':
+#   Mean: (1.86228e-03,)
+#   Std:  (9.65053e-02,)
+#   Var:  (9.31326e-03,)
+#   Min:  -1.96168e-01
+#   Max:  1.48363e-01
+#   Count: 660693
+
+# Statistics for 'terrain_position':
+#   Mean: (5.67189e+01, -2.23773e-01, 1.10983e+00)
+#   Std:  (1.10725e+02, 4.76450e+01, 2.69568e+00)
+#   Var:  (1.22600e+04, 2.27004e+03, 7.26671e+00)
+#   Min:  (-1.45000e+02, -1.10000e+02, 0.00000e+00)
+#   Max:  (3.05000e+02, 1.10000e+02, 3.79000e+01)
+#   Count: 660693
+
+# Statistics for 'terrain_rugosity':
+#   Mean: (3.10780e-01,)
+#   Std:  (2.53132e-01,)
+#   Var:  (6.40757e-02,)
+#   Min:  5.03507e-02
+#   Max:  9.70451e-01
+#   Count: 660693
+
+# Statistics for 'volume_epsilon' (log scale):
+#   Mean: (1.84378e-01,)
+#   Std:  (3.57059e-01,)
+#   Var:  (1.27491e-01,)
+#   Min:  1.58083e-11
+#   Max:  4.25441e+00
+#   Count: 16644173
+
+# Statistics for 'volume_position':
+#   Mean: (6.52408e+01, -1.46744e-01, 1.14060e+01)
+#   Std:  (1.14734e+02, 4.94491e+01, 1.27425e+01)
+#   Var:  (1.31639e+04, 2.44522e+03, 1.62372e+02)
+#   Min:  (-1.40000e+02, -1.05000e+02, 8.50000e-02)
+#   Max:  (2.98199e+02, 1.05000e+02, 5.47149e+01)
+#   Count: 16644173
+
+# Statistics for 'volume_pottemp':
+#   Mean: (2.86129e+02,)
+#   Std:  (1.10330e+01,)
+#   Var:  (1.21727e+02,)
+#   Min:  2.38975e+02
+#   Max:  2.97127e+02
+#   Count: 16644173
+
+# Statistics for 'volume_pressure':
+#   Mean: (-9.07271e-01,)
+#   Std:  (7.89962e+00,)
+#   Var:  (6.24040e+01,)
+#   Min:  -7.97809e+01
+#   Max:  3.02921e+01
+#   Count: 16644173
+
+# Statistics for 'volume_tke' (log scale):
+#   Mean: (7.47357e-01,)
+#   Std:  (9.02999e-01,)
+#   Var:  (8.15407e-01,)
+#   Min:  5.58005e-10
+#   Max:  3.76518e+00
+#   Count: 16644173
+
+# Statistics for 'volume_velocity':
+#   Mean: (2.90460e+00, -8.32665e-04, 8.52419e-03)
+#   Std:  (1.72039e+00, 1.91881e-01, 1.25547e-01)
+#   Var:  (2.95974e+00, 3.68184e-02, 1.57621e-02)
+#   Min:  (-2.39941e+00, -4.55251e+00, -3.40677e+00)
+#   Max:  (6.20937e+00, 4.88183e+00, 3.86020e+00)
+#   Count: 16644173

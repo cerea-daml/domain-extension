@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - datasets: train_datasets
+  - callbacks: train_callbacks
+  - trainer: base_trainer
+  - optimizer: lion
+  - _self_
+
+stage_name: train
+output_path: ./outputs
+store_code_in_output: false

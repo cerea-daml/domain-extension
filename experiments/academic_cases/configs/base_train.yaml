@@ -1,0 +1,18 @@
+# @package _global_
+
+# Train defaults
+
+name: train
+
+defaults:
+  - datasets: train_val_dataset
+  - pipeline: base_pipeline
+  - model: base_transformer
+  - callbacks: train_callbacks
+  - trainer: base_trainer
+  - optimizer: lion
+  - _self_
+
+store_code_in_output: false
+stage_name: train
+output_path: ./outputs

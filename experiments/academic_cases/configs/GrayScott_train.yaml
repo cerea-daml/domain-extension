@@ -1,0 +1,13 @@
+# @package _global_
+
+name: GrayScott_train
+
+dataset_kind: academic_cases.datasets.GrayScottDataset
+dataset_root: ../../data/academic_datasets/gray_scott
+
+defaults:
+  - dataset_normalizers: GrayScott_normalizers
+  - data_specs: GrayScott_specs
+  - base_train
+  - _self_
+

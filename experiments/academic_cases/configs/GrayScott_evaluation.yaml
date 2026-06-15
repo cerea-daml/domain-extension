@@ -1,0 +1,24 @@
+# @package _global_
+
+name: GrayScott_eval
+
+dataset_kind: academic_cases.datasets.GrayScottDataset
+dataset_root: ../../data/academic_datasets/gray_scott
+
+#set the resume to train and the stage to eval
+output_path: ./outputs
+run_id: ???
+resume_run_id: ${run_id}
+resume_stage_name: train
+stage_name: eval
+resume_checkpoint: latest
+
+defaults:
+  - base_train
+  - dataset_normalizers: GrayScott_normalizers
+  - data_specs: GrayScott_specs
+  - override datasets: test_dataset
+  - override callbacks: inference_callback
+  - _self_
+
+eval_times: [3, 6, 9]

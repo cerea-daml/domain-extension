@@ -1,0 +1,8 @@
+position_dim: 1
+input_features:
+  u: 1
+  h: 1
+  boundary_condition: 1
+output_targets:
+  du: 1
+  dh: 1

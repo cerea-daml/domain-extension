@@ -1,0 +1,19 @@
+# @package _global_
+
+dataset_kind: abswift.datasets.RandomBuildingsDataset
+dataset_root: ../../data/random_buildings_dataset
+
+target_properties:
+  - anchor_volume_velocity
+  - anchor_volume_pressure
+  - anchor_volume_pottemp
+  - anchor_volume_tke
+  - anchor_volume_epsilon
+
+defaults:
+  - train_defaults
+  - model: abswift_rbd
+  - data_specs: rbd_data_specs
+  - dataset_normalizers: rbd_normalizers
+  - pipeline: rbd_train
+  - _self_

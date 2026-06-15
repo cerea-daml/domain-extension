@@ -1,0 +1,11 @@
+# @package _global_
+
+# Symetric bias
+# We take the average of the asymetric values, yielding a total kernel of the same size
+# values below are in units of normalised coordinates
+
+model:
+  bias_type: l2
+  geometry_lbda: [111, 250, 500]
+  processor_lbda: [111, 250, 500]
+  decoder_lbda: [168, 250, 500]

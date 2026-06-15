@@ -1,0 +1,34 @@
+test:
+  root:  ${dataset_root}
+  kind: ${dataset_kind}
+  split: test
+  dataset_normalizers: ${dataset_normalizers}
+  pipeline: ${pipeline}
+
+test_s2:
+  root:  ${dataset_root}
+  kind: ${dataset_kind}
+  split: test_s2
+  dataset_normalizers: ${dataset_normalizers}
+  pipeline: ${pipeline}
+
+test_s3:
+  root:  ${dataset_root}
+  kind: ${dataset_kind}
+  split: test_s3
+  dataset_normalizers: ${dataset_normalizers}
+  pipeline: ${pipeline}
+  
+test_s7:
+  root:  ${dataset_root}
+  kind: ${dataset_kind}
+  split: test_s7
+  dataset_normalizers: ${dataset_normalizers}
+  pipeline: ${pipeline}
+
+test_s10:
+  root:  ${dataset_root}
+  kind: ${dataset_kind}
+  split: test_s10
+  dataset_normalizers: ${dataset_normalizers}
+  pipeline: ${pipeline}

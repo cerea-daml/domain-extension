@@ -1,0 +1,12 @@
+
+kind: academic_cases.trainers.Trainer
+precision: bfloat16
+max_epochs: 100
+effective_batch_size: 32
+log_every_n_epochs: 1
+callbacks: ${callbacks}
+
+forward_properties: ${model.forward_properties}
+target_properties:
+  - target_feature
+  - index

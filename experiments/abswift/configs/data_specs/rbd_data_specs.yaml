@@ -1,0 +1,30 @@
+# data specifications for RBD 
+
+#Noether doesn't allow empty output dims, hence {}
+
+position_dim: 3
+
+domains:
+  obstacles:
+    feature_dim:
+      {}
+    output_dims:
+      {}
+  terrain:
+    feature_dim:
+      terrain_invlmo: 1
+      terrain_rugosity: 1
+    output_dims:
+      {}
+
+  volume:
+    output_dims:
+      volume_velocity: 3
+      volume_pressure: 1
+      volume_pottemp: 1
+      volume_tke: 1
+      volume_epsilon: 1     
+
+
+conditioning_dims:
+  profile: 256

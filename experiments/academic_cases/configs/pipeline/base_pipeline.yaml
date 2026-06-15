@@ -1,0 +1,4 @@
+# config for academic cases pipeline
+
+kind: academic_cases.pipeline.AcademicCasesPipeline
+data_specs: ${data_specs}
