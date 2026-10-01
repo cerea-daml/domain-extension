@@ -6,7 +6,25 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "cmocean>=4.0.3",
-    "emmiai-noether @ git+https://github.com/Emmi-AI/noether.git@803b36fce6a6e46dd0749beed29ea89493c12fc6", # We fix the commit on purpose to avoid backward incompatibility problems
+    "emmiai-noether @ git+https://github.com/Emmi-AI/noether.git@313e6c5c2ff31f283a3e5935b4d85888aac6b025", # Fixed commit to avoid compatiblity issues
     "ipykernel>=7.2.0",
     "ipympl>=0.10.0",
 ]
+
+# Cuda version is fixed at 12.8 because of gpu driver limits.
+# Remove the cuda-related lines if you want to upgrade cuda
+[tool.uv]
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu128"},
+]
+torchvision = [
+  { index = "pytorch-cu128"},
+]
+
+emmiai-noether = { git = "https://github.com/Emmi-AI/noether.git" }

@@ -56,7 +56,7 @@ class PlotCasesCallback(PeriodicDataIteratorCallback):
     def _process_one_case(self, batch, *, trainer_model, **_):
 
         idx = batch['index'][0].item()
-        design_id = self._dataset.getitem_design_id(idx)
+        design_id = self._dataset.getitem_design_id(idx).item()
 
         mesh = self._dataset.get_volume_mesh(idx)
         triang, ids = get_slice(mesh, self.plot_height)
@@ -71,9 +71,9 @@ class PlotCasesCallback(PeriodicDataIteratorCallback):
             model_prediction = self.model(**forward_inputs)
 
         # extract data
-        preds = {f:model_prediction[f'query_{f}'][0] for f in self.data_specs.volume_output_dims.keys()}
+        preds = {f:model_prediction[f'query_{f}'][0] for f in self.volume_fields}
         data = self._dataset[idx]
-        labels = {f:data[f][ids] for f in self.data_specs.volume_output_dims.keys()}
+        labels = {f:data[f][ids] for f in self.volume_fields}
 
         #to cpu
         preds = {k:v.cpu() for k,v in preds.items()}
@@ -84,8 +84,8 @@ class PlotCasesCallback(PeriodicDataIteratorCallback):
         labels = {k:self._dataset.normalizers[k].inverse(v) for k,v in labels.items()}
 
         #numpyfy
-        preds = {k:v.numpy() for k,v in preds.items()}
-        labels = {k:v.numpy() for k,v in labels.items()}
+        preds = {k[7:]:v.numpy() for k,v in preds.items()}
+        labels = {k[7:]:v.numpy() for k,v in labels.items()}
 
         #generate plot
         fig = plot(triang, labels, preds)
@@ -93,7 +93,7 @@ class PlotCasesCallback(PeriodicDataIteratorCallback):
         
         self.logger.info(f'Generated plot {self.dataset_key}_{design_id}')
         if self.save_res_array and design_id!=9:
-            np.save(self.save_path / f'{self.dataset_key}_{design_id}.npy', preds['volume_velocity'])
+            np.save(self.save_path / f'{self.dataset_key}_{design_id}.npy', preds['velocity'])
 
     def process_data(self, batch, *, trainer_model):
         

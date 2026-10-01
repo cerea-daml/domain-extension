@@ -5,6 +5,6 @@
 
 model:
   bias_type: hyperbolic
-  geometry_lbda: [111, 250, 500]
-  processor_lbda: [111, 250, 500]
-  decoder_lbda: [[111, 250, 500], [225, 250, 500]] # (lbda+, lbda-) with each lbda being anysotropic
+  geometry_lbda: [73, 180, 333]
+  processor_lbda: [73, 180, 333]
+  decoder_lbda: [[73, 333, 333], [287, 333, 333]] # (lbda+, lbda-) with each lbda being anysotropic

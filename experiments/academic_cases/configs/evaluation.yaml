@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - datasets: test_dataset
+  - callbacks: inference_callbacks
+  - _self_
+
+data_specs: ${model.data_specs}
+dataset_normalizers: ${datasets[train].dataset_normalizers}
+pipeline: ${datasets[train].pipeline}
+
+trainer:
+  callbacks:
+    ${callbacks}
+
+hydra:
+  searchpath:
+    - configs
+
+eval_times: [3, 6, 9]
+
